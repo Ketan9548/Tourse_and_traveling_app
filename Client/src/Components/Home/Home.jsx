@@ -36,7 +36,10 @@ const Home = () => {
                 Explore the most stunning destinations with curated tours
                 tailored just for you.
               </p>
-              <NavLink to="services" className="mt-8 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white text-lg font-semibold rounded-full shadow-lg transition-all duration-300 ease-in-out">
+              <NavLink
+                to="services"
+                className="mt-8 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white text-lg font-semibold rounded-full shadow-lg transition-all duration-300 ease-in-out"
+              >
                 Explore Tours
               </NavLink>
             </div>
@@ -164,7 +167,6 @@ const Home = () => {
       <div className="border-8 border-yellow-300 p-4">
         <Card />
       </div>
-
       <div className="bg-white py-10 border-8 flex flex-col border-amber-300">
         <div className="ml-32 flex justify-center sm:mr-52">
           <h1 className="text-2xl md:text-4xl lg:text-4xl font-bold text-black text-center mb-8">
