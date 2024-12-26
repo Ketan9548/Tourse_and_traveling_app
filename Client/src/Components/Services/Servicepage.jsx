@@ -47,12 +47,12 @@ const Servicepage = () => {
                 {val.list.map((route, idx) => (
                   <div
                     key={idx}
-                    className="text-lg flex font-serif m-1 mb-3 mt-3 border-b-2 border-black w-56"
+                    className="text-lg flex w-auto font-serif m-1 mb-3 mt-3 border-b-2 border-black"
                   >
                     <span className="text-green-700">
                       <FontAwesomeIcon icon={faSquareCheck} />
                     </span>
-                    <NavLink to={`/service/${route}`}>
+                    <NavLink to="nanitalcar">
                       <span className="hover:text-orange-400 ml-2 text-xl">
                         {route}
                       </span>
