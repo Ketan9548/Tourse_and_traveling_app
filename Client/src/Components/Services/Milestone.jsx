@@ -33,7 +33,6 @@ const Milestone = () => {
 
   return (
     <div className="m-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {/* Customers */}
       <div className="p-4 bg-white shadow-lg rounded-xl flex flex-col items-center">
         <p className="text-6xl text-black">{count}</p>
         <FontAwesomeIcon
@@ -42,8 +41,6 @@ const Milestone = () => {
         />
         <p className="mt-4 text-black font-bold">Customers</p>
       </div>
-
-      {/* Number of Trips */}
       <div className="p-4 bg-white shadow-lg rounded-xl flex flex-col items-center">
         <p className="text-6xl text-black">{count1}</p>
         <FontAwesomeIcon
@@ -52,8 +49,6 @@ const Milestone = () => {
         />
         <p className="mt-4 text-black font-bold">Number of Trips</p>
       </div>
-
-      {/* Trip Types */}
       <div className="p-4 bg-white shadow-lg rounded-xl flex flex-col items-center">
         <p className="text-6xl text-black">{count2}</p>
         <FontAwesomeIcon
@@ -62,8 +57,6 @@ const Milestone = () => {
         />
         <p className="mt-4 text-black font-bold">Trip Types</p>
       </div>
-
-      {/* Customer Satisfaction */}
       <div className="p-4 bg-white shadow-lg rounded-xl flex flex-col items-center">
         <p className="text-6xl text-black">{count3}%</p>
         <FontAwesomeIcon
