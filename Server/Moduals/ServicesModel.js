@@ -1,12 +1,12 @@
 import { DataTypes } from "sequelize";
 import sequelizeDB from "../DatabaseConnection/DbConnection.js";
 
-const ServicesModels = sequelizeDB.define('Services', {
+const ServicesModels = sequelizeDB.define("Services", {
   title: {
-    type: DataTypes.STRING, // Changed from TEXT to STRING for validation to work
+    type: DataTypes.STRING,
     allowNull: false,
     validate: {
-      isAlpha: true, // `isAlpha` should be in the `validate` object
+      is: /^[a-zA-Z\s]+$/,
     },
   },
   list: {
@@ -15,7 +15,7 @@ const ServicesModels = sequelizeDB.define('Services', {
     validate: {
       isArray(value) {
         if (!Array.isArray(value)) {
-          throw new Error('The list field must be an array.');
+          throw new Error("The list field must be an array.");
         }
       },
     },

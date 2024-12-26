@@ -8,19 +8,13 @@ import cors from "cors";
 const app = express();
 const port = 3000;
 
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 // Database connection
 const connectToDatabase = async () => {
   try {
     await sequelizeDB.authenticate();
-    await sequelizeDB.sync({ force: true });
+    await sequelizeDB.sync({ alter: true });
     console.log("Connection has been Created successfully.");
   } catch (error) {
     console.error("Unable to connect to the database:", error);

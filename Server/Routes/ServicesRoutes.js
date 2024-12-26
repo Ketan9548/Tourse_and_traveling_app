@@ -15,4 +15,13 @@ Serviceapp.post("/add", async (req, res) => {
   }
 });
 
+Serviceapp.get("/alldata", async (req, res) => {
+  try {
+    const alldata = await ServicesModels.findAll();
+    res.status(200).json(alldata);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching all data", error });
+  }
+});
+
 export default Serviceapp;
