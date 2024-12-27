@@ -25,11 +25,11 @@ const Servicepage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('/api/alldata');
+      const response = await axios.get("/api/alldata");
       setDataval(response.data);
       console.log("the data is response is:", response);
-    } catch (error) {
-      setError("Failed to fetch data. Please try again later.", error);
+    } catch (err) {
+      setError("Failed to fetch data. Please try again later.", err);
     }
   };
   useEffect(() => {
