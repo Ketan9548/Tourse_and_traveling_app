@@ -3,8 +3,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareCheck, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import Chardham from "../Blogs/Blogsimges/Chardham.jpg";
+import Dehradun from "../Blogs/Blogsimges/Dehardun.jpg";
+import Haridwar from "../Blogs/Blogsimges/Haridwar.jpg";
+import Kedarnath from "../Blogs/Blogsimges/Kedarnath.webp";
+import Masuri from "../Blogs/Blogsimges/Masuri.jpg";
+import Nanital from "../Blogs/Blogsimges/Nanital.jpg";
 
 const Servicepage = () => {
+  const blogs = [
+    { name: "Chardham", src: Chardham },
+    { name: "Dehradun", src: Dehradun },
+    { name: "Haridwar", src: Haridwar },
+    { name: "Kedarnath", src: Kedarnath },
+    { name: "Masuri", src: Masuri },
+    { name: "Nanital", src: Nanital },
+  ];
+
   const [dataval, setDataval] = useState([]);
   const [error, setError] = useState(null);
   let url = "http://localhost:3000/api/alldata";
@@ -23,48 +38,82 @@ const Servicepage = () => {
   }, []);
 
   return (
-    <div className="w-auto h-auto">
-      <p className="text-center font-bold text-6xl">Taxi Service of Cabs</p>
-      <div className="flex md:w-auto justify-center mt-4 ml-80 mr-80">
-        <div className="flex md:w-full w-full h-1 bg-gradient-to-r from-transparent via-black to-transparent rounded-lg shadow-md"></div>
-      </div>
-      {error ? (
-        <p className="text-center text-red-500 font-bold">{error}</p>
-      ) : (
-        <div className="flex flex-wrap h-auto w-auto justify-between mt-9 border-2 border-black p-2 mr-5 ml-3 mb-3">
-          {dataval.map((val, index) => (
-            <div
-              key={index}
-              className="border-2 h-80 w-80 border-black p-4 m-2"
-            >
-              <div className="flex ml-0 flex-row h-auto w-full">
-                <p className="mr-3 mt-1">
-                  <FontAwesomeIcon icon={faArrowRight} />
-                </p>
-                <h3 className="text-2xl font-bold">{val.title}</h3>
-              </div>
-              <div className="m-2">
-                {val.list.map((route, idx) => (
-                  <div
-                    key={idx}
-                    className="text-lg flex w-auto font-serif m-1 mb-3 mt-3 border-b-2 border-black"
-                  >
-                    <span className="text-green-700">
-                      <FontAwesomeIcon icon={faSquareCheck} />
-                    </span>
-                    <NavLink to="nanitalcar">
-                      <span className="hover:text-orange-400 ml-2 text-xl">
-                        {route}
+    <>
+      <div className="w-auto h-auto">
+        <p className="text-center font-bold text-4xl sm:text-6xl">
+          Taxi Service of Cabs
+        </p>
+        <div className="flex justify-center mt-4 px-4 sm:px-20">
+          <div className="flex w-full sm:w-auto h-1 bg-gradient-to-r from-transparent via-black to-transparent rounded-lg shadow-md"></div>
+        </div>
+        {error ? (
+          <p className="text-center text-red-500 font-bold">{error}</p>
+        ) : (
+          <div className="flex flex-wrap justify-center mt-9 border-2 border-black p-4 sm:mx-10 mb-3">
+            {dataval.map((val, index) => (
+              <div
+                key={index}
+                className="border-2 h-auto w-full sm:w-80 border-black p-4 m-2"
+              >
+                <div className="flex items-center mb-2">
+                  <p className="mr-3">
+                    <FontAwesomeIcon icon={faArrowRight} />
+                  </p>
+                  <h3 className="text-lg sm:text-2xl font-bold">{val.title}</h3>
+                </div>
+                <div className="m-2">
+                  {val.list.map((route, idx) => (
+                    <div
+                      key={idx}
+                      className="text-base sm:text-lg flex items-center font-serif m-1 border-b-2 border-black pb-2"
+                    >
+                      <span className="text-green-700">
+                        <FontAwesomeIcon icon={faSquareCheck} />
                       </span>
-                    </NavLink>
-                  </div>
-                ))}
+                      <NavLink to="nanitalcar">
+                        <span className="hover:text-orange-400 ml-2">
+                          {route}
+                        </span>
+                      </NavLink>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="m-4">
+        <div className="flex bg-sky-700 text-white p-4 justify-center items-center">
+          <p className="text-5xl font-bold mb-1">Our Blogs</p>
+        </div>
+        <div className="flex flex-col">
+          {blogs.map((item, index) => (
+            <div key={index} className="flex flex-col lg:flex-row mb-4">
+              <div className="w-full lg:w-1/4 flex justify-center items-center mb-4 lg:mb-0">
+                <img
+                  src={item.src}
+                  alt=""
+                  className="max-w-full rounded-lg shadow-md"
+                />
+              </div>
+              <div className="w-full lg:w-1/2 flex flex-col justify-center ml-0 lg:ml-12">
+                <p className="text-3xl mb-1 font-bold text-yellow-400">
+                  <NavLink to="/blogs">{item.name}</NavLink>
+                </p>
+                <p className="font-thin text-pretty text-lg">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel
+                  incidunt ut magnam fugiat eveniet eligendi placeat, dolores
+                  cum voluptatum, maxime laboriosam animi in inventore dolor
+                  dolorem sit soluta quidem! Quisquam, maiores fugit.
+                </p>
               </div>
             </div>
           ))}
         </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 
