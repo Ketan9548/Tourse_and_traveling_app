@@ -22,11 +22,10 @@ const Servicepage = () => {
 
   const [dataval, setDataval] = useState([]);
   const [error, setError] = useState(null);
-  let url = "http://localhost:3000/api/alldata";
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(url);
+      const response = await axios.get('/api/alldata');
       setDataval(response.data);
       console.log("the data is response is:", response);
     } catch (error) {
@@ -99,7 +98,7 @@ const Servicepage = () => {
                 />
               </div>
               <div className="w-full lg:w-1/2 flex flex-col justify-center ml-0 lg:ml-12">
-                <p className="text-3xl mb-1 font-bold text-yellow-400">
+                <p className="text-3xl mb-1 hover:text-black font-bold text-yellow-400">
                   <NavLink to="/blogs">{item.name}</NavLink>
                 </p>
                 <p className="font-thin text-pretty text-lg">
