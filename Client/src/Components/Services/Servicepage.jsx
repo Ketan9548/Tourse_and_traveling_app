@@ -90,12 +90,12 @@ const Servicepage = () => {
         </div>
         <div className="flex flex-col">
           {blogs.map((item, index) => (
-            <div key={index} className="flex flex-col lg:flex-row mb-4">
+            <div key={index} className="flex flex-col lg:flex-row mb-4 mt-4">
               <div className="w-full lg:w-1/4 flex justify-center items-center mb-4 lg:mb-0">
                 <img
                   src={item.src}
                   alt=""
-                  className="max-w-full rounded-lg shadow-md"
+                  className="border-2 border-gray-300 rounded-lg shadow-md transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
                 />
               </div>
               <div className="w-full lg:w-1/2 flex flex-col justify-center ml-0 lg:ml-12">
