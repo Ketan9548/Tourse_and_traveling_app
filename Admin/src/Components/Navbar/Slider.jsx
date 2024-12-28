@@ -17,7 +17,7 @@ const Slider = () => {
       </div>
       <div className="flex flex-row">
         <div className="h-full mr-3">
-          <div className="ml-20 mt-10 ">
+          <div className="ml-20 mt-10 w-44">
             <NavLink
               to="addservice"
               className={({ isActive }) =>
