@@ -13,10 +13,10 @@ const Navbar = () => {
       };
       reader.readAsDataURL(file);
     }
-  };
+  };  
 
   return (
-    <div className="flex flex-col md:flex-row justify-between sticky top-0 bg-blue-400 bg-opacity-55 items-center p-4 shadow-md">
+    <div className="flex flex-col md:flex-row justify-between bg-blue-400 bg-opacity-55 items-center p-4 shadow-md">
       {/* Logo Section */}
       <div className="flex items-center space-x-3">
         <img
