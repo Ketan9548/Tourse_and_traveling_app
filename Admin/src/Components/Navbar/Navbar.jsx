@@ -16,16 +16,22 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-row justify-between sticky bg-blue-400 bg-opacity-55 items-center p-4">
-      <div className="flex flex-col items-center">
-        <img className="logo h-10 w-auto mr-2" src="" alt="logo" />
-        <p className="text-lg font-semibold">Admin Panel</p>
-      </div>
-      <div className="relative">
+    <div className="flex flex-col md:flex-row justify-between sticky top-0 bg-blue-400 bg-opacity-55 items-center p-4 shadow-md">
+      {/* Logo Section */}
+      <div className="flex items-center space-x-3">
         <img
-          className="mt-1 ml-1 h-12 w-12 rounded-full object-cover"
+          className="h-10 w-auto"
+          src={assestfile.logo_img || ""}
+          alt="logo"
+        />
+        <p className="text-lg font-semibold text-white">Admin Panel</p>
+      </div>
+
+      {/* Profile Section */}
+      <div className="relative mt-3 md:mt-0">
+        <img
+          className="h-16 w-16 rounded-full object-cover border-2 border-white shadow-md"
           src={profileImage}
-          style={{ height: "85px", width: "85px" }}
           alt="profile_image"
         />
         <input
@@ -33,6 +39,7 @@ const Navbar = () => {
           accept="image/*"
           onChange={handleImageChange}
           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+          title="Change Profile Image"
         />
       </div>
     </div>

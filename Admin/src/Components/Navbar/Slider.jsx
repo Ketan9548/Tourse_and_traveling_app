@@ -11,13 +11,12 @@ const Slider = () => {
   return (
     <>
       <div>
-        <div>
-          <div className="bg-black h-0.5 w-full"></div>
-        </div>
+        <div className="bg-black h-0.5 w-full"></div>
       </div>
-      <div className="flex flex-row">
-        <div className="h-full mr-3">
-          <div className="ml-20 mt-10 w-44">
+      <div className="flex flex-col lg:flex-row">
+        {/* Sidebar */}
+        <div className="h-full lg:mr-3">
+          <div className="ml-5 mt-5 w-44 lg:ml-20 lg:mt-10">
             <NavLink
               to="addservice"
               className={({ isActive }) =>
@@ -27,7 +26,7 @@ const Slider = () => {
               }
             >
               <FontAwesomeIcon icon={faCirclePlus} />
-              <p>Add Service</p>
+              <p className="text-sm lg:text-base">Add Service</p>
             </NavLink>
             <NavLink
               to="list"
@@ -38,7 +37,7 @@ const Slider = () => {
               }
             >
               <FontAwesomeIcon icon={faList} />
-              <p>List Service</p>
+              <p className="text-sm lg:text-base">List Service</p>
             </NavLink>
             <NavLink
               to="customer_reviews"
@@ -49,16 +48,18 @@ const Slider = () => {
               }
             >
               <FontAwesomeIcon icon={faCommentDots} />
-              <p>Customer Review</p>
+              <p className="text-sm lg:text-base">Customer Review</p>
             </NavLink>
           </div>
         </div>
-        <div className="flex flex-row">
-          <div>
-            <div className="bg-black h-screen w-0.5"></div>
-          </div>
+
+        {/* Divider */}
+        <div className="hidden lg:flex">
+          <div className="bg-black h-screen w-0.5"></div>
         </div>
-        <div className="ml-7">
+
+        {/* Content */}
+        <div className="ml-5 lg:ml-7 flex-grow">
           <Outlet />
         </div>
       </div>
