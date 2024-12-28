@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex flex-row justify-between bg-blue-400 bg-opacity-55 items-center p-4">
+    <div className="flex flex-row justify-between sticky bg-blue-400 bg-opacity-55 items-center p-4">
       <div className="flex flex-col items-center">
         <img className="logo h-10 w-auto mr-2" src="" alt="logo" />
         <p className="text-lg font-semibold">Admin Panel</p>
