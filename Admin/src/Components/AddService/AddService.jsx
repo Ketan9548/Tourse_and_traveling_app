@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const AddService = () => {
+  const notify = () => toast.success("Service Add Successfully");
+  
   // Initialize state from localStorage or with defaults
   const [title, setTitle] = useState("");
   const [list, setList] = useState(() => {
@@ -52,7 +55,8 @@ const AddService = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container h-full mx-auto p-4">
+      <ToastContainer />
       <h1 className="text-3xl font-semibold text-center mb-6">
         Add New Service
       </h1>
@@ -111,6 +115,9 @@ const AddService = () => {
 
         <button
           type="submit"
+          onClick={() => {
+            notify();
+          }}
           className="w-20 h-11 hover:bg-blue-800 bg-blue-500 text-white py-2 px-3 rounded-lg transition-all ease-in-out duration-300"
         >
           Add

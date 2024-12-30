@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const ListService = () => {
+  const notify = () => toast.error("Service Delete Successfully");
+
   const [service, setService] = useState([]);
 
   // Fetch data from the API
@@ -21,6 +24,7 @@ const ListService = () => {
       await axios.delete(`/api/delete/${id}`);
       console.log(`Data with ID ${id} deleted.`);
       setService((prevService) => prevService.filter((item) => item.id !== id));
+      notify();
     } catch (error) {
       console.error("Error deleting data:", error.message);
     }
@@ -33,6 +37,7 @@ const ListService = () => {
 
   return (
     <div className="container mx-auto p-4">
+      <ToastContainer />
       <h1 className="text-3xl font-semibold text-center mb-6">
         List of Services
       </h1>
