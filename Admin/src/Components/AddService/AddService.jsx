@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const AddService = () => {
   const notify = () => toast.success("Service Add Successfully");
-  
+
   // Initialize state from localStorage or with defaults
   const [title, setTitle] = useState("");
   const [list, setList] = useState(() => {
