@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCirclePlus,
@@ -8,12 +8,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Slider = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <>
       <div className="h-screen bg-yellow-600 bg-opacity-20">
-        {/* Divider */}
         <div className="flex flex-col lg:flex-row h-full">
-          {/* Sidebar */}
           <div className="h-full md:h-auto lg:mr-3">
             <div className="ml-5 mt-5 w-44 lg:ml-20 lg:mt-10">
               <NavLink
@@ -54,7 +55,13 @@ const Slider = () => {
 
           {/* Content */}
           <div className="ml-5 flex-grow lg:ml-7 overflow-y-auto">
-            <Outlet />
+            {location.pathname === "/" ? (
+              <div className="flex mt-60 text-4xl justify-center items-center animate-bounce">
+                <p className="font-serif text-pretty font-bold">Welcome User</p>
+              </div>
+            ) : (
+              <Outlet />
+            )}
           </div>
         </div>
       </div>
