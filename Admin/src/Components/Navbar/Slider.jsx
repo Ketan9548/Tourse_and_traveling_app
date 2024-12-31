@@ -10,13 +10,11 @@ import {
 const Slider = () => {
   return (
     <>
-      <div className="h-screen">
-        <div>
-          <div className="bg-black h-0.5 w-full"></div>
-        </div>
-        <div className="flex flex-col lg:flex-row">
+      <div className="h-screen bg-yellow-600 bg-opacity-20">
+        {/* Divider */}
+        <div className="flex flex-col lg:flex-row h-full">
           {/* Sidebar */}
-          <div className="h-full lg:mr-3">
+          <div className="h-full md:h-auto lg:mr-3">
             <div className="ml-5 mt-5 w-44 lg:ml-20 lg:mt-10">
               <NavLink
                 to="addservice"
@@ -54,13 +52,8 @@ const Slider = () => {
             </div>
           </div>
 
-          {/* Divider */}
-          <div className="hidden lg:flex h-auto">
-            <div className="bg-black h-auto w-0.5"></div>
-          </div>
-
           {/* Content */}
-          <div className="ml-5 h-auto scroll-auto lg:ml-7 flex-grow">
+          <div className="ml-5 flex-grow lg:ml-7 overflow-y-auto">
             <Outlet />
           </div>
         </div>
