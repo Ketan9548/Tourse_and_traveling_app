@@ -1,8 +1,11 @@
 import { assestfile } from "../../assets/assetsfile";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 const Navbar = () => {
+  const location = useLocation();
   const [profileImage, setProfileImage] = useState(assestfile.profile_img);
 
   const handleImageChange = (e) => {
@@ -14,6 +17,16 @@ const Navbar = () => {
       };
       reader.readAsDataURL(file);
     }
+  };
+
+  async function fetchval(params) {
+    try {
+    } catch (error) {}
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
   };
 
   return (
@@ -34,14 +47,36 @@ const Navbar = () => {
 
       {/* Header Section */}
       <div className="flex items-center space-x-8 mt-4 md:mt-0">
-        <div className="bg-white p-2 border-2 border-white rounded-3xl pl-4 pr-4 text-black">
-          <NavLink
-            to="login"
-            className="text-sm md:text-base font-medium transition duration-300"
-          >
-            Login
-          </NavLink>
-        </div>
+        {location.pathname === "/addservice" ? (
+          <div className="bg-white p-2 border-2 border-white rounded-3xl pl-4 pr-4 text-black">
+            <NavLink
+              onClick={handleLogout}
+              to="/"
+              className="text-sm md:text-base font-medium transition duration-300"
+            >
+              Logout
+            </NavLink>
+          </div>
+        ) : (
+          <div className="bg-white p-2 border-2 border-white rounded-3xl pl-4 pr-4 text-black">
+            <NavLink
+              to="login"
+              className="text-sm md:text-base font-medium transition duration-300"
+            >
+              Login
+            </NavLink>
+          </div>
+        )}
+        {location.pathname === "/registration" ? (
+          <div className="bg-white p-2 border-2 border-white rounded-3xl pl-4 pr-4 text-black">
+            <NavLink
+              to="/addservice"
+              className="text-sm md:text-base text-black font-medium transition duration-300"
+            >
+              Home
+            </NavLink>
+          </div>
+        ) : null}
         <div className="bg-white p-2 border-2 border-white rounded-3xl pl-4 pr-4 text-black">
           <NavLink
             to="registration"
