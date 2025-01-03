@@ -1,5 +1,5 @@
 import { assestfile } from "../../assets/assetsfile";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
@@ -21,8 +21,19 @@ const Navbar = () => {
 
   async function fetchval(params) {
     try {
-    } catch (error) {}
+      const response = await axios.get("api/users");
+      console.log(typeof response);
+    } catch (error) {
+      console.error(
+        "the error in the fetching the data Users in the server",
+        error
+      );
+    }
   }
+
+  useEffect(() => {
+    fetchval();
+  });
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -45,9 +56,10 @@ const Navbar = () => {
         </p>
       </div>
 
-      {/* Header Section */}
-      <div className="flex items-center space-x-8 mt-4 md:mt-0">
-        {location.pathname === "/addservice" ? (
+      <div className="flex items-center space-x-8 mt-4 md:mt-0 ml-7">
+        {location.pathname === "/addservice" ||
+        location.pathname === "/list" ||
+        location.pathname === "/customer_reviews" ? (
           <div className="bg-white p-2 border-2 border-white rounded-3xl pl-4 pr-4 text-black">
             <NavLink
               onClick={handleLogout}
@@ -67,6 +79,7 @@ const Navbar = () => {
             </NavLink>
           </div>
         )}
+
         {location.pathname === "/registration" ? (
           <div className="bg-white p-2 border-2 border-white rounded-3xl pl-4 pr-4 text-black">
             <NavLink
