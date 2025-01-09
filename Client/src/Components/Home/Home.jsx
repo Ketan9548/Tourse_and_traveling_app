@@ -17,7 +17,7 @@ const Home = () => {
         className="relative w-full"
         data-carousel="slide"
       >
-        <div className="relative h-56 overflow-hidden md:h-96">
+        <div className="relative h-56 sm:h-72 md:h-96 lg:h-screen overflow-hidden">
           <div
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${banner})`,
@@ -29,16 +29,16 @@ const Home = () => {
             data-carousel-item
           >
             <div className="flex flex-col justify-center items-center h-full w-full text-center">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl italic text-white font-bold drop-shadow-lg mb-4">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl italic text-white font-bold drop-shadow-lg mb-4">
                 Discover Your Next Tours
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-gray-200 font-light max-w-2xl mx-auto drop-shadow-md">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 font-light max-w-2xl mx-auto drop-shadow-md px-4">
                 Explore the most stunning destinations with curated tours
                 tailored just for you.
               </p>
               <NavLink
                 to="services"
-                className="mt-8 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white text-lg font-semibold rounded-full shadow-lg transition-all duration-300 ease-in-out"
+                className="mt-8 px-4 sm:px-6 py-2 sm:py-3 bg-yellow-500 hover:bg-yellow-600 text-white text-sm sm:text-lg font-semibold rounded-full shadow-lg transition-all duration-300 ease-in-out"
               >
                 Explore Tours
               </NavLink>
@@ -55,15 +55,15 @@ const Home = () => {
             className="relative duration-700 h-full ease-in-out"
             data-carousel-item
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black"></div>{" "}
-            <div className="flex flex-col justify-end items-start h-full w-full p-10 space-y-4 text-left">
-              <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-md">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black"></div>
+            <div className="flex flex-col justify-end items-start h-full w-full p-6 sm:p-10 space-y-2 sm:space-y-4 text-left">
+              <h2 className="text-2xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-md">
                 Adventure Awaits
               </h2>
-              <p className="text-lg md:text-xl text-gray-300 max-w-md">
+              <p className="text-sm sm:text-lg md:text-xl text-gray-300 max-w-md">
                 Let us guide you to the most breathtaking places in the world.
               </p>
-              <button className="px-6 py-2 bg-yellow-400 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-500">
+              <button className="px-4 sm:px-6 py-2 bg-yellow-400 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-500">
                 Book Now
               </button>
             </div>
