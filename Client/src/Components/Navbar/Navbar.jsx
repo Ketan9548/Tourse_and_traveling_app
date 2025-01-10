@@ -62,14 +62,6 @@ const Navbar = () => {
                 Home
               </NavLink>
             </li>
-            {/* <li>
-              <NavLink
-                to="about"
-                className="block py-2 px-3 text-gray-700 rounded hover:bg-purple-600 hover:text-white md:hover:bg-transparent md:text-white md:hover:text-gray-200"
-              >
-                About
-              </NavLink>
-            </li> */}
             <li>
               <NavLink
                 to="services"
@@ -84,6 +76,14 @@ const Navbar = () => {
                 className="block py-2 px-3 text-gray-700 rounded hover:bg-purple-600 hover:text-white md:hover:bg-transparent md:text-white md:hover:text-gray-200"
               >
                 Blogs
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="about"
+                className="block py-2 px-3 text-gray-700 rounded hover:bg-purple-600 hover:text-white md:hover:bg-transparent md:text-white md:hover:text-gray-200"
+              >
+                About
               </NavLink>
             </li>
             <li>
