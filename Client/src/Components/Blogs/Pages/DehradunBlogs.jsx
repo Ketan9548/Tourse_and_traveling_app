@@ -15,7 +15,7 @@ const DehradunBlogs = () => {
   const [altitude, setaltitude] = useState(0);
   const [trakingarea, settrakingarea] = useState(0);
   const [hight, sethight] = useState([0, 0, 0, 0]);
-  const targethight = [13, 23, 41, 56];
+  const targethight = [13, 23, 39, 49];
 
   // increesing the high accoudin to given value
   const animation = () => {
