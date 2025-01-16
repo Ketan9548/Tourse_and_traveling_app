@@ -199,6 +199,9 @@ const DehradunBlogs = () => {
           <p className="text-xl">Easy to Moderate</p>
         </div>
       </div>
+      <div>
+        
+      </div>
     </>
   );
 };
