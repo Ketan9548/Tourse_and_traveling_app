@@ -9,12 +9,30 @@ import { faEarth } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { faPersonHiking } from "@fortawesome/free-solid-svg-icons";
 import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { faSignal } from "@fortawesome/free-solid-svg-icons";
 
 const DehradunBlogs = () => {
   const [duration, setduration] = useState(0);
   const [altitude, setaltitude] = useState(0);
   const [trakingarea, settrakingarea] = useState(0);
+  const [hight, sethight] = useState([0, 0, 0, 0]);
+  const targethight = [13, 23, 41, 56];
+
+  // increesing the high accoudin to given value
+  const animation = () => {
+    targethight.forEach((targethight, index) => {
+      setTimeout(() => {
+        sethight((prev) => {
+          const newHight = [...prev];
+          newHight[index] = targethight;
+          return newHight;
+        });
+      }, index * 500);
+    });
+  };
+
+  useEffect(() => {
+    animation();
+  }, []);
 
   const controler = (setcontroler, target, increment, controlertime) => {
     const interval = setInterval(() => {
@@ -126,7 +144,7 @@ const DehradunBlogs = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-row justify-around">
+      <div className="flex flex-row h-auto justify-around static">
         <div className="mt-3 mb-3 flex flex-col justify-center items-center">
           <p className=" text-red-500 opacity-85 text-4xl">
             <FontAwesomeIcon icon={faEarth} />
@@ -156,8 +174,26 @@ const DehradunBlogs = () => {
           <p className="text-xl">{trakingarea} Km</p>
         </div>
         <div className="mt-3 mb-3 flex flex-col justify-center items-center">
-          <p className=" text-red-500 opacity-85 text-4xl">
-            <FontAwesomeIcon icon={faSignal} />
+          <p className="text-red-500 opacity-85 mr-2 text-4xl">
+            <div className="flex flex-row  items-end">
+              {hight.map((hight, index) => (
+                <>
+                  <div
+                    key={index}
+                    style={{
+                      height: `${hight}px`,
+                      width: "8px",
+                      backgroundColor: "red",
+                      marginLeft: "4px",
+                      transition: "height 0.5s ease",
+                    }}
+                    className="text-xs"
+                  >
+                    {index + 1}
+                  </div>
+                </>
+              ))}
+            </div>
           </p>
           <p className="font-bold text-2xl">Grade</p>
           <p className="text-xl">Easy to Moderate</p>
