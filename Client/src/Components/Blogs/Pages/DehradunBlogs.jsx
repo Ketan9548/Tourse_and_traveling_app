@@ -30,10 +30,6 @@ const DehradunBlogs = () => {
     });
   };
 
-  useEffect(() => {
-    animation();
-  }, []);
-
   const controler = (setcontroler, target, increment, controlertime) => {
     const interval = setInterval(() => {
       setcontroler((prev) => {
@@ -49,12 +45,9 @@ const DehradunBlogs = () => {
   };
 
   useEffect(() => {
+    animation();
     controler(setduration, 3, 0.5, 60);
-  }, []);
-  useEffect(() => {
     controler(setaltitude, 1427, 10, 1);
-  }, []);
-  useEffect(() => {
     controler(settrakingarea, 12, 1, 50);
   }, []);
 
@@ -80,18 +73,6 @@ const DehradunBlogs = () => {
                   alt={`Slide ${index + 1}`}
                 />
               </div>
-            ))}
-          </div>
-          <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-            {[...Array(carosal.length)].map((_, idx) => (
-              <button
-                key={idx}
-                type="button"
-                className="w-3 h-3 rounded-full"
-                aria-current={idx === 0 ? "true" : "false"}
-                aria-label={`Slide ${idx + 1}`}
-                data-carousel-slide-to={idx}
-              ></button>
             ))}
           </div>
           <button
@@ -199,8 +180,12 @@ const DehradunBlogs = () => {
           <p className="text-xl">Easy to Moderate</p>
         </div>
       </div>
-      <div>
-        
+      <div className="w-full flex justify-center mb-3">
+        <div className="mt-3 flex w-auto justify-center">
+          <div className="bg-yellow-500 w-auto h-16 items-center flex justify-center">
+            <p className="text-white">4000/Person</p>
+          </div>
+        </div>
       </div>
     </>
   );
