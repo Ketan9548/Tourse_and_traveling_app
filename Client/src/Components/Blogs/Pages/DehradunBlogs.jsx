@@ -4,11 +4,14 @@ import img2 from "../Carosalimg/images2.jpg";
 import img3 from "../Carosalimg/images3.jpg";
 import img4 from "../Carosalimg/images4.jpg";
 import img5 from "../Carosalimg/images5.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEarth } from "@fortawesome/free-solid-svg-icons";
-import { faClock } from "@fortawesome/free-solid-svg-icons";
-import { faPersonHiking } from "@fortawesome/free-solid-svg-icons";
-import { faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
+import InfoCard from "./Cards/InfoCard";
+import GradeCard from "./Cards/GradeCard";
+import {
+  faEarth,
+  faClock,
+  faPersonHiking,
+  faMapLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
 
 const DehradunBlogs = () => {
   const [duration, setduration] = useState(0);
@@ -17,18 +20,6 @@ const DehradunBlogs = () => {
   const [hight, sethight] = useState([0, 0, 0, 0]);
   const targethight = [13, 23, 39, 49];
 
-  const change = () => {
-    if (currencychange === 4000) {
-      const data = 4000 / 84.3;
-      const formatedata = data.toFixed(2);
-      setcurrencychange(formatedata);
-    } else if (currencychange === 47.45) {
-      const val = 47.45 * 84.3;
-      setcurrencychange((prev) => (prev = val));
-    }
-  };
-
-  // increesing the high accoudin to given value
   const animation = () => {
     targethight.forEach((targethight, index) => {
       setTimeout(() => {
@@ -63,6 +54,7 @@ const DehradunBlogs = () => {
   }, []);
 
   const carosal = [img1, img2, img3, img4, img5];
+
   return (
     <>
       <div>
@@ -80,7 +72,7 @@ const DehradunBlogs = () => {
               >
                 <img
                   src={imge}
-                  className="w-full h-full object-cover shadow-lg  "
+                  className="w-full h-full object-cover shadow-lg"
                   alt={`Slide ${index + 1}`}
                 />
               </div>
@@ -88,22 +80,21 @@ const DehradunBlogs = () => {
           </div>
           <button
             type="button"
-            className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-prev
           >
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
               <svg
-                className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                aria-hidden="true"
+                className="w-4 h-4 text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 6 10"
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M5 1 1 5l4 4"
                 />
               </svg>
@@ -112,22 +103,21 @@ const DehradunBlogs = () => {
           </button>
           <button
             type="button"
-            className="absolute top-0  end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
             data-carousel-next
           >
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
               <svg
-                className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-                aria-hidden="true"
+                className="w-4 h-4 text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 6 10"
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="m1 9 4-4-4-4"
                 />
               </svg>
@@ -136,74 +126,39 @@ const DehradunBlogs = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-row h-auto justify-around static">
-        <div className="mt-3 mb-3 flex flex-col justify-center items-center">
-          <p className=" text-red-500 opacity-85 text-4xl">
-            <FontAwesomeIcon icon={faEarth} />
-          </p>
-          <p className="font-bold text-2xl">Region</p>
-          <p className="text-xl">Uttarakhand | Dehradun</p>
-        </div>
-        <div className="mt-3 mb-3 flex flex-col justify-center items-center">
-          <p className=" text-red-500 opacity-85 text-4xl">
-            <FontAwesomeIcon icon={faClock} />
-          </p>
-          <p className="font-bold text-2xl">Duration</p>
-          <p className="text-xl">{duration} days</p>
-        </div>
-        <div className="mt-3 mb-3 flex flex-col justify-center items-center">
-          <p className=" text-red-500 opacity-85 text-4xl">
-            <FontAwesomeIcon icon={faPersonHiking} />
-          </p>
-          <p className="font-bold text-2xl">Altitute</p>
-          <p className="text-xl">{altitude} Ft.</p>
-        </div>
-        <div className="mt-3 mb-3 flex flex-col justify-center items-center">
-          <p className=" text-red-500 opacity-85 text-4xl">
-            <FontAwesomeIcon icon={faMapLocationDot} />
-          </p>
-          <p className="font-bold text-2xl">Traking Area</p>
-          <p className="text-xl">{trakingarea} Km</p>
-        </div>
-        <div className="mt-3 mb-3 flex flex-col justify-center items-center">
-          <p className="text-red-500 opacity-85 mr-2 text-4xl">
-            <div className="flex flex-row  items-end">
-              {hight.map((hight, index) => (
-                <>
-                  <div
-                    key={index}
-                    style={{
-                      height: `${hight}px`,
-                      width: "8px",
-                      backgroundColor: "red",
-                      marginLeft: "4px",
-                      transition: "height 0.5s ease",
-                    }}
-                    className="text-xs"
-                  >
-                    {index + 1}
-                  </div>
-                </>
-              ))}
-            </div>
-          </p>
-          <p className="font-bold text-2xl">Grade</p>
-          <p className="text-xl">Easy to Moderate</p>
+
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-6">
+        <InfoCard
+          icon={faEarth}
+          title="Region"
+          description="Uttarakhand | Dehradun"
+        />
+        <InfoCard
+          icon={faClock}
+          title="Duration"
+          description={`${duration} days`}
+        />
+        <InfoCard
+          icon={faPersonHiking}
+          title="Altitude"
+          description={`${altitude} Ft.`}
+        />
+        <InfoCard
+          icon={faMapLocationDot}
+          title="Tracking Area"
+          description={`${trakingarea} Km`}
+        />
+        <GradeCard hight={hight} />
+      </div>
+
+      <div className="w-full flex justify-center mb-6">
+        <div className="bg-yellow-500 px-6 py-4 flex justify-between items-center rounded-lg">
+          <p className="text-white font-bold text-lg">7000/Person</p>
+          <button className="ml-3 font-bold text-white text-lg bg-blue-600 px-4 py-2 rounded">
+            Book Now
+          </button>
         </div>
       </div>
-      <div className="w-full flex justify-center mb-3">
-        <div className="mt-3 flex w-auto justify-center">
-          <div className="bg-yellow-500 w-auto h-16 items-center flex justify-center">
-            <p className="text-white font-bold">
-              {currencychange}/Person / {value1}
-            </p>
-            <button className="ml-3 font-bold text-2xl" onClick={change}>
-              click
-            </button>
-          </div>
-        </div>
-      </div>
-      <div></div>
     </>
   );
 };
