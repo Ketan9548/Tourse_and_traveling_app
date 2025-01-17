@@ -34,7 +34,7 @@ const Contact = () => {
         Message: formData.message,
       };
       await axios
-        .post("http://localhost:3000/api/contactinfo", data)
+        .post("/contactinfo", data)
         .then((res) => console.log(res.data))
         .catch((err) => console.log(err.message));
       alert("Form submitted successfully!");

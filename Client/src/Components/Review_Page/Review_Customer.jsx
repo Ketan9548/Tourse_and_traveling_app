@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Review_Customer = () => {
@@ -17,11 +18,22 @@ const Review_Customer = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Data Submitted:", formData);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", number: "", message: "" });
+    const data = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.number,
+      message: formData.message,
+    };
+    try {
+      await axios.post("/customerreview", data)
+      .then((res)=> console.log(res.data));
+      setSubmitted(true);
+      setFormData({ name: "", email: "", number: "", message: "" });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   return (

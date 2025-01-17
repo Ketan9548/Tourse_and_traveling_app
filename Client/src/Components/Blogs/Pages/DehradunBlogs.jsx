@@ -16,15 +16,15 @@ const DehradunBlogs = () => {
   const [trakingarea, settrakingarea] = useState(0);
   const [hight, sethight] = useState([0, 0, 0, 0]);
   const targethight = [13, 23, 39, 49];
-  const [currencychange, setcurrencychange] = useState();
-  const [inrtodoller, setinrtodoller] = useState("INR");
 
   const change = () => {
-    if (inrtodoller === "inr") {
-      const inrcurrency = currencychange * 86.48;
-      return inrcurrency;
-    } else {
-      return currencychange / 86.48;
+    if (currencychange === 4000) {
+      const data = 4000 / 84.3;
+      const formatedata = data.toFixed(2);
+      setcurrencychange(formatedata);
+    } else if (currencychange === 47.45) {
+      const val = 47.45 * 84.3;
+      setcurrencychange((prev) => (prev = val));
     }
   };
 
@@ -194,8 +194,12 @@ const DehradunBlogs = () => {
       <div className="w-full flex justify-center mb-3">
         <div className="mt-3 flex w-auto justify-center">
           <div className="bg-yellow-500 w-auto h-16 items-center flex justify-center">
-            <p className="text-white font-bold">4000/Person {inrtodoller}</p>
-            <button></button>
+            <p className="text-white font-bold">
+              {currencychange}/Person / {value1}
+            </p>
+            <button className="ml-3 font-bold text-2xl" onClick={change}>
+              click
+            </button>
           </div>
         </div>
       </div>
