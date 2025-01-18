@@ -4,14 +4,15 @@ import img2 from "../Carosalimg/images2.jpg";
 import img3 from "../Carosalimg/images3.jpg";
 import img4 from "../Carosalimg/images4.jpg";
 import img5 from "../Carosalimg/images5.jpg";
-import InfoCard from "./Cards/InfoCard";
-import GradeCard from "./Cards/GradeCard";
+import InfoCard from "./Section/InfoCard";
+import GradeCard from "./Section/GradeCard";
 import {
   faEarth,
   faClock,
   faPersonHiking,
   faMapLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import Details from "./Section/Details";
 
 const DehradunBlogs = () => {
   const [duration, setduration] = useState(0);
@@ -19,6 +20,9 @@ const DehradunBlogs = () => {
   const [trakingarea, settrakingarea] = useState(0);
   const [hight, sethight] = useState([0, 0, 0, 0]);
   const targethight = [13, 23, 39, 49];
+
+  const price = 3000;
+  const name = ["fist","second","third","fourth","fifth"];
 
   const animation = () => {
     targethight.forEach((targethight, index) => {
@@ -151,13 +155,8 @@ const DehradunBlogs = () => {
         <GradeCard hight={hight} />
       </div>
 
-      <div className="w-full flex justify-center mb-6">
-        <div className="bg-yellow-500 px-6 py-4 flex justify-between items-center rounded-lg">
-          <p className="text-white font-bold text-lg">7000/Person</p>
-          <button className="ml-3 font-bold text-white text-lg bg-blue-600 px-4 py-2 rounded">
-            Book Now
-          </button>
-        </div>
+      <div className="w-auto ml-52 mr-52 mb-6">
+        <Details names={name} price={price}/>
       </div>
     </>
   );
