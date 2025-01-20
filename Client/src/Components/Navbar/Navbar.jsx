@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 border-gray-200 dark:bg-gray-900 shadow-lg">
+    <nav className="bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 border-gray-200 dark:bg-gray-900 shadow-lg">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink
           to="/"
@@ -25,7 +25,7 @@ const Navbar = () => {
           onClick={toggleMobileMenu}
           data-collapse-toggle="navbar-default"
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
           aria-expanded={isMobileMenuOpen}
         >
@@ -56,7 +56,10 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/"
-                className="block py-2 px-3 text-gray-700 rounded hover:bg-purple-600 hover:text-white md:hover:bg-transparent md:text-white md:hover:text-gray-200"
+                style={({ isActive }) => ({
+                  color: isActive ? "#ffeb3b" : "#ffffff", // Yellow for active, white for default
+                })}
+                className="block py-2 px-3 text-white rounded hover:bg-blue-600 hover:text-yellow-400 md:hover:bg-transparent sm:text-black md:text-white md:hover:text-yellow-400"
                 aria-current="page"
               >
                 Home
@@ -65,7 +68,10 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="services"
-                className="block py-2 px-3 text-gray-700 rounded hover:bg-purple-600 hover:text-white md:hover:bg-transparent md:text-white md:hover:text-gray-200"
+                style={({ isActive }) => ({
+                  color: isActive ? "#ffeb3b" : "#ffffff",
+                })}
+                className="block py-2 px-3 text-white rounded hover:bg-blue-600 hover:text-yellow-400 sm:text-black md:hover:bg-transparent md:text-white md:hover:text-yellow-400"
               >
                 Services
               </NavLink>
@@ -73,7 +79,10 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="blogs"
-                className="block py-2 px-3 text-gray-700 rounded hover:bg-purple-600 hover:text-white md:hover:bg-transparent md:text-white md:hover:text-gray-200"
+                style={({ isActive }) => ({
+                  color: isActive ? "#ffeb3b" : "#ffffff",
+                })}
+                className="block py-2 px-3 text-white rounded hover:bg-blue-600 hover:text-yellow-400 md:hover:bg-transparent md:text-white md:hover:text-yellow-400"
               >
                 Blogs
               </NavLink>
@@ -81,7 +90,10 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="about"
-                className="block py-2 px-3 text-gray-700 rounded hover:bg-purple-600 hover:text-white md:hover:bg-transparent md:text-white md:hover:text-gray-200"
+                style={({ isActive }) => ({
+                  color: isActive ? "#ffeb3b" : "#ffffff",
+                })}
+                className="block py-2 px-3 text-white rounded hover:bg-blue-600 hover:text-yellow-400 md:hover:bg-transparent md:text-white md:hover:text-yellow-400"
               >
                 About
               </NavLink>
@@ -89,7 +101,10 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="contact"
-                className="block py-2 px-3 text-gray-700 rounded hover:bg-purple-600 hover:text-white md:hover:bg-transparent md:text-white md:hover:text-gray-200"
+                style={({ isActive }) => ({
+                  color: isActive ? "#ffeb3b" : "#ffffff",
+                })}
+                className="block py-2 px-3 text-white rounded hover:bg-blue-600 hover:text-yellow-400 md:hover:bg-transparent md:text-white md:hover:text-yellow-400"
               >
                 Contact
               </NavLink>

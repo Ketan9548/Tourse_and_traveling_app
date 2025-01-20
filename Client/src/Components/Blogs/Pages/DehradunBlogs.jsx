@@ -13,125 +13,131 @@ import {
   faMapLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import Details from "./Section/Details";
+import Overview from "./Section/Overview";
+import Itinerary from "./Section/Itinerary";
 
 const DehradunBlogs = () => {
-  const [duration, setduration] = useState(0);
-  const [altitude, setaltitude] = useState(0);
-  const [trakingarea, settrakingarea] = useState(0);
-  const [hight, sethight] = useState([0, 0, 0, 0]);
-  const targethight = [13, 23, 39, 49];
+  const [duration, setDuration] = useState(0);
+  const [altitude, setAltitude] = useState(0);
+  const [trackingArea, setTrackingArea] = useState(0);
+  const [height, setHeight] = useState([0, 0, 0, 0]);
+  const targetHeight = [13, 23, 39, 49];
 
   const price = 3000;
-  const name = ["fist","second","third","fourth","fifth"];
+  const name = [
+    "+5% GST (goods and services tax).",
+    "Services Lohajung to Lohajung.",
+    "Meeting Point: Opposite Shiv Vilas Hotel, Tapovan, Rishikesh.",
+    "Reporting Time: 6:00 am",
+    "Drop Time: 6:30 pm to 7:30 pm (subject to weather conditions).",
+    "Please reach Rishikesh a day before to avoid delays.",
+  ];
 
-  const animation = () => {
-    targethight.forEach((targethight, index) => {
+  const animateHeights = () => {
+    targetHeight.forEach((target, index) => {
       setTimeout(() => {
-        sethight((prev) => {
-          const newHight = [...prev];
-          newHight[index] = targethight;
-          return newHight;
+        setHeight((prev) => {
+          const newHeight = [...prev];
+          newHeight[index] = target;
+          return newHeight;
         });
       }, index * 500);
     });
   };
 
-  const controler = (setcontroler, target, increment, controlertime) => {
+  const controller = (setController, target, increment, timeInterval) => {
     const interval = setInterval(() => {
-      setcontroler((prev) => {
+      setController((prev) => {
         if (prev >= target) {
           clearInterval(interval);
           return target;
         }
         return prev + increment;
       });
-    }, controlertime);
+    }, timeInterval);
 
     return () => clearInterval(interval);
   };
 
   useEffect(() => {
-    animation();
-    controler(setduration, 3, 0.5, 60);
-    controler(setaltitude, 1427, 10, 1);
-    controler(settrakingarea, 12, 1, 50);
+    animateHeights();
+    controller(setDuration, 3, 0.5, 60);
+    controller(setAltitude, 1427, 10, 1);
+    controller(setTrackingArea, 12, 1, 50);
   }, []);
 
-  const carosal = [img1, img2, img3, img4, img5];
+  const carouselImages = [img1, img2, img3, img4, img5];
 
   return (
-    <>
-      <div>
-        <div
-          id="default-carousel"
-          className="relative w-full"
-          data-carousel="slide"
-        >
-          <div className="relative h-56 overflow-hidden md:h-96">
-            {carosal.map((imge, index) => (
-              <div
-                key={index}
-                className="hidden duration-700 ease-in-out"
-                data-carousel-item
-              >
-                <img
-                  src={imge}
-                  className="w-full h-full object-cover shadow-lg"
-                  alt={`Slide ${index + 1}`}
-                />
-              </div>
-            ))}
-          </div>
-          <button
-            type="button"
-            className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-prev
-          >
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
-              <svg
-                className="w-4 h-4 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M5 1 1 5l4 4"
-                />
-              </svg>
-              <span className="sr-only">Previous</span>
-            </span>
-          </button>
-          <button
-            type="button"
-            className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-            data-carousel-next
-          >
-            <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50">
-              <svg
-                className="w-4 h-4 text-white"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 6 10"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="m1 9 4-4-4-4"
-                />
-              </svg>
-              <span className="sr-only">Next</span>
-            </span>
-          </button>
+    <div className="w-full">
+      {/* Carousel */}
+      <div className="relative w-full mb-10">
+        <div className="relative h-56 overflow-hidden md:h-96">
+          {carouselImages.map((image, index) => (
+            <div
+              key={index}
+              className="hidden duration-700 ease-in-out"
+              data-carousel-item
+            >
+              <img
+                src={image}
+                className="w-full h-full object-cover shadow-lg"
+                alt={`Slide ${index + 1}`}
+              />
+            </div>
+          ))}
         </div>
+        {/* Carousel Controls */}
+        <button
+          type="button"
+          className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 group"
+          data-carousel-prev
+        >
+          <span className="inline-flex items-center justify-center w-10 h-10 bg-gray-800/50 rounded-full group-hover:bg-gray-800/70">
+            <svg
+              className="w-6 h-6 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+            <span className="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 group"
+          data-carousel-next
+        >
+          <span className="inline-flex items-center justify-center w-10 h-10 bg-gray-800/50 rounded-full group-hover:bg-gray-800/70">
+            <svg
+              className="w-6 h-6 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span className="sr-only">Next</span>
+          </span>
+        </button>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-6">
+      {/* Info Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 px-4 py-6">
         <InfoCard
           icon={faEarth}
           title="Region"
@@ -150,15 +156,22 @@ const DehradunBlogs = () => {
         <InfoCard
           icon={faMapLocationDot}
           title="Tracking Area"
-          description={`${trakingarea} Km`}
+          description={`${trackingArea} Km`}
         />
-        <GradeCard hight={hight} />
+        <GradeCard height={height} />
       </div>
 
-      <div className="w-auto ml-52 mr-52 mb-6">
-        <Details names={name} price={price}/>
+      <div className="mx-auto max-w-4xl px-4 mb-10">
+        <Details names={name} price={price} />
       </div>
-    </>
+
+      <div className="mx-auto max-w-4xl mb-10 px-4">
+        <Overview />
+      </div>
+      <div className="mx-auto max-w-4xl px-4">
+        <Itinerary/>
+      </div>
+    </div>
   );
 };
 

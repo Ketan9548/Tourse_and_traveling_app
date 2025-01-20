@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 
-const GradeCard = ({ hight }) => {
+const GradeCard = ({ height }) => {
   return (
     <div className="flex flex-col items-center text-center">
       <div className="flex space-x-2 items-end">
-        {hight.map((height, index) => (
+        {height.map((height, index) => (
           <div
             key={index}
             style={{
