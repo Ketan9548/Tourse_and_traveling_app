@@ -101,7 +101,7 @@ const Itinerary = () => {
         </div>
       ) : (
         <div>
-          <div className="flex mt-2 flex-row">
+          <div className="flex mt-2 bg-red-500 border-2 rounded-2xl p-1 flex-row">
             <button
               className={`mr-3 p-1 text-black border-2 rounded-xl border-red-600 ${
                 days === 1
@@ -159,40 +159,230 @@ const Itinerary = () => {
                 case 1:
                   return (
                     <>
-                      <div>
-                        <p>day 1</p>
+                      <div className="m-3">
+                        <h1 className="text-2xl font-bold">Dehradun to masuri</h1>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Asperiores fugit necessitatibus beatae cumque
+                          in, quia reiciendis! Nostrum iusto nesciunt et porro
+                          architecto repellat culpa molestiae maxime eligendi
+                          rerum ducimus vel, adipisci fuga unde. Cum voluptatum
+                          distinctio totam autem est iusto, ratione reiciendis
+                          possimus blanditiis unde nulla ipsam quibusdam
+                          perspiciatis laboriosam? Veritatis nisi ducimus libero
+                          dicta quidem impedit maxime in omnis quaerat! Quam
+                          exercitationem optio similique error temporibus,
+                          asperiores sed voluptatum quod expedita at quo
+                          ratione, eaque unde eius iste sunt sapiente quaerat
+                          assumenda veritatis reprehenderit esse velit.
+                          Provident perferendis deserunt in. Quos, quod eaque
+                          enim vitae amet odio tempora similique nulla autem.
+                          Deleniti doloribus porro cumque sapiente quod,
+                          doloremque earum, enim fuga quo quia natus illum
+                          similique facere praesentium ipsa consectetur
+                          voluptatibus architecto iusto molestiae quisquam
+                          suscipit, id magni impedit! Enim voluptate voluptatum
+                          veniam deserunt. Voluptate distinctio nihil voluptatum
+                          nostrum ullam, quis aspernatur soluta accusamus
+                          eligendi fugiat. Suscipit, cupiditate! Vitae
+                          consectetur id quis odio sed incidunt quod, ex eaque
+                          quisquam molestiae amet quasi ducimus expedita rerum
+                          tempora repellendus eum unde ipsam quas autem
+                          blanditiis adipisci perspiciatis quidem libero? Iste
+                          eos debitis accusamus laboriosam quia pariatur aliquid
+                          doloremque in esse facere incidunt animi delectus hic
+                          exercitationem nisi dignissimos ratione est, officiis
+                          consectetur aperiam optio voluptates sapiente velit.
+                          Deserunt aut fugiat optio? Dolorum voluptate
+                          praesentium vel illo commodi, molestias quae explicabo
+                          sequi error deserunt magnam, deleniti optio
+                          consectetur odit fugiat ratione autem? Quisquam
+                          tenetur tempora.
+                        </p>
                       </div>
                     </>
                   );
                 case 2:
                   return (
                     <>
-                      <div>
-                        <p>day 2</p>
+                     <div className="m-3">
+                        <h1 className="text-2xl font-bold">Dehradun to masuri</h1>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Asperiores fugit necessitatibus beatae cumque
+                          in, quia reiciendis! Nostrum iusto nesciunt et porro
+                          architecto repellat culpa molestiae maxime eligendi
+                          rerum ducimus vel, adipisci fuga unde. Cum voluptatum
+                          distinctio totam autem est iusto, ratione reiciendis
+                          possimus blanditiis unde nulla ipsam quibusdam
+                          perspiciatis laboriosam? Veritatis nisi ducimus libero
+                          dicta quidem impedit maxime in omnis quaerat! Quam
+                          exercitationem optio similique error temporibus,
+                          asperiores sed voluptatum quod expedita at quo
+                          ratione, eaque unde eius iste sunt sapiente quaerat
+                          assumenda veritatis reprehenderit esse velit.
+                          Provident perferendis deserunt in. Quos, quod eaque
+                          enim vitae amet odio tempora similique nulla autem.
+                          Deleniti doloribus porro cumque sapiente quod,
+                          doloremque earum, enim fuga quo quia natus illum
+                          similique facere praesentium ipsa consectetur
+                          voluptatibus architecto iusto molestiae quisquam
+                          suscipit, id magni impedit! Enim voluptate voluptatum
+                          veniam deserunt. Voluptate distinctio nihil voluptatum
+                          nostrum ullam, quis aspernatur soluta accusamus
+                          eligendi fugiat. Suscipit, cupiditate! Vitae
+                          consectetur id quis odio sed incidunt quod, ex eaque
+                          quisquam molestiae amet quasi ducimus expedita rerum
+                          tempora repellendus eum unde ipsam quas autem
+                          blanditiis adipisci perspiciatis quidem libero? Iste
+                          eos debitis accusamus laboriosam quia pariatur aliquid
+                          doloremque in esse facere incidunt animi delectus hic
+                          exercitationem nisi dignissimos ratione est, officiis
+                          consectetur aperiam optio voluptates sapiente velit.
+                          Deserunt aut fugiat optio? Dolorum voluptate
+                          praesentium vel illo commodi, molestias quae explicabo
+                          sequi error deserunt magnam, deleniti optio
+                          consectetur odit fugiat ratione autem? Quisquam
+                          tenetur tempora.
+                        </p>
                       </div>
                     </>
                   );
                 case 3:
                   return (
                     <>
-                      <div>
-                        <p>day 3</p>
+                     <div className="m-3">
+                        <h1 className="text-2xl font-bold">Dehradun to masuri</h1>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Asperiores fugit necessitatibus beatae cumque
+                          in, quia reiciendis! Nostrum iusto nesciunt et porro
+                          architecto repellat culpa molestiae maxime eligendi
+                          rerum ducimus vel, adipisci fuga unde. Cum voluptatum
+                          distinctio totam autem est iusto, ratione reiciendis
+                          possimus blanditiis unde nulla ipsam quibusdam
+                          perspiciatis laboriosam? Veritatis nisi ducimus libero
+                          dicta quidem impedit maxime in omnis quaerat! Quam
+                          exercitationem optio similique error temporibus,
+                          asperiores sed voluptatum quod expedita at quo
+                          ratione, eaque unde eius iste sunt sapiente quaerat
+                          assumenda veritatis reprehenderit esse velit.
+                          Provident perferendis deserunt in. Quos, quod eaque
+                          enim vitae amet odio tempora similique nulla autem.
+                          Deleniti doloribus porro cumque sapiente quod,
+                          doloremque earum, enim fuga quo quia natus illum
+                          similique facere praesentium ipsa consectetur
+                          voluptatibus architecto iusto molestiae quisquam
+                          suscipit, id magni impedit! Enim voluptate voluptatum
+                          veniam deserunt. Voluptate distinctio nihil voluptatum
+                          nostrum ullam, quis aspernatur soluta accusamus
+                          eligendi fugiat. Suscipit, cupiditate! Vitae
+                          consectetur id quis odio sed incidunt quod, ex eaque
+                          quisquam molestiae amet quasi ducimus expedita rerum
+                          tempora repellendus eum unde ipsam quas autem
+                          blanditiis adipisci perspiciatis quidem libero? Iste
+                          eos debitis accusamus laboriosam quia pariatur aliquid
+                          doloremque in esse facere incidunt animi delectus hic
+                          exercitationem nisi dignissimos ratione est, officiis
+                          consectetur aperiam optio voluptates sapiente velit.
+                          Deserunt aut fugiat optio? Dolorum voluptate
+                          praesentium vel illo commodi, molestias quae explicabo
+                          sequi error deserunt magnam, deleniti optio
+                          consectetur odit fugiat ratione autem? Quisquam
+                          tenetur tempora.
+                        </p>
                       </div>
                     </>
                   );
                 case 4:
                   return (
                     <>
-                      <div>
-                        <p>day 4</p>
+                      <div className="m-3">
+                        <h1 className="text-2xl font-bold">Dehradun to masuri</h1>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Asperiores fugit necessitatibus beatae cumque
+                          in, quia reiciendis! Nostrum iusto nesciunt et porro
+                          architecto repellat culpa molestiae maxime eligendi
+                          rerum ducimus vel, adipisci fuga unde. Cum voluptatum
+                          distinctio totam autem est iusto, ratione reiciendis
+                          possimus blanditiis unde nulla ipsam quibusdam
+                          perspiciatis laboriosam? Veritatis nisi ducimus libero
+                          dicta quidem impedit maxime in omnis quaerat! Quam
+                          exercitationem optio similique error temporibus,
+                          asperiores sed voluptatum quod expedita at quo
+                          ratione, eaque unde eius iste sunt sapiente quaerat
+                          assumenda veritatis reprehenderit esse velit.
+                          Provident perferendis deserunt in. Quos, quod eaque
+                          enim vitae amet odio tempora similique nulla autem.
+                          Deleniti doloribus porro cumque sapiente quod,
+                          doloremque earum, enim fuga quo quia natus illum
+                          similique facere praesentium ipsa consectetur
+                          voluptatibus architecto iusto molestiae quisquam
+                          suscipit, id magni impedit! Enim voluptate voluptatum
+                          veniam deserunt. Voluptate distinctio nihil voluptatum
+                          nostrum ullam, quis aspernatur soluta accusamus
+                          eligendi fugiat. Suscipit, cupiditate! Vitae
+                          consectetur id quis odio sed incidunt quod, ex eaque
+                          quisquam molestiae amet quasi ducimus expedita rerum
+                          tempora repellendus eum unde ipsam quas autem
+                          blanditiis adipisci perspiciatis quidem libero? Iste
+                          eos debitis accusamus laboriosam quia pariatur aliquid
+                          doloremque in esse facere incidunt animi delectus hic
+                          exercitationem nisi dignissimos ratione est, officiis
+                          consectetur aperiam optio voluptates sapiente velit.
+                          Deserunt aut fugiat optio? Dolorum voluptate
+                          praesentium vel illo commodi, molestias quae explicabo
+                          sequi error deserunt magnam, deleniti optio
+                          consectetur odit fugiat ratione autem? Quisquam
+                          tenetur tempora.
+                        </p>
                       </div>
                     </>
                   );
                 case 5:
                   return (
                     <>
-                      <div>
-                        <p>day 5</p>
+                      <div className="m-3">
+                        <h1 className="text-2xl font-bold">Dehradun to masuri</h1>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Asperiores fugit necessitatibus beatae cumque
+                          in, quia reiciendis! Nostrum iusto nesciunt et porro
+                          architecto repellat culpa molestiae maxime eligendi
+                          rerum ducimus vel, adipisci fuga unde. Cum voluptatum
+                          distinctio totam autem est iusto, ratione reiciendis
+                          possimus blanditiis unde nulla ipsam quibusdam
+                          perspiciatis laboriosam? Veritatis nisi ducimus libero
+                          dicta quidem impedit maxime in omnis quaerat! Quam
+                          exercitationem optio similique error temporibus,
+                          asperiores sed voluptatum quod expedita at quo
+                          ratione, eaque unde eius iste sunt sapiente quaerat
+                          assumenda veritatis reprehenderit esse velit.
+                          Provident perferendis deserunt in. Quos, quod eaque
+                          enim vitae amet odio tempora similique nulla autem.
+                          Deleniti doloribus porro cumque sapiente quod,
+                          doloremque earum, enim fuga quo quia natus illum
+                          similique facere praesentium ipsa consectetur
+                          voluptatibus architecto iusto molestiae quisquam
+                          suscipit, id magni impedit! Enim voluptate voluptatum
+                          veniam deserunt. Voluptate distinctio nihil voluptatum
+                          nostrum ullam, quis aspernatur soluta accusamus
+                          eligendi fugiat. Suscipit, cupiditate! Vitae
+                          consectetur id quis odio sed incidunt quod, ex eaque
+                          quisquam molestiae amet quasi ducimus expedita rerum
+                          tempora repellendus eum unde ipsam quas autem
+                          blanditiis adipisci perspiciatis quidem libero? Iste
+                          eos debitis accusamus laboriosam quia pariatur aliquid
+                          doloremque in esse facere incidunt animi delectus hic
+                          exercitationem nisi dignissimos ratione est, officiis
+                          consectetur aperiam optio voluptates sapiente velit.
+                          Deserunt aut fugiat optio? Dolorum voluptate
+                          praesentium vel illo commodi, molestias quae explicabo
+                          sequi error deserunt magnam, deleniti optio
+                          consectetur odit fugiat ratione autem? Quisquam
+                          tenetur tempora.
+                        </p>
                       </div>
                     </>
                   );
